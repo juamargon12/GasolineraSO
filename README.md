@@ -29,7 +29,7 @@ El sistema cuenta con tres modos principales accesibles mediante un menú intera
 ## ⚙️ Compilación y Ejecución
 Para que el sistema funcione correctamente en un entorno Linux, es fundamental respetar el orden de creación y eliminación de recursos IPC compartidos.
 
-**1. Compilación de los archivos**
+**1. Compilación de los archivos:**
 Abre una terminal y compila los cuatro ficheros (se recomienda enlazar la librería de hilos para el uso de semáforos POSIX):
 ```bash
 gcc crea.c -o crea -pthread
@@ -38,13 +38,13 @@ gcc cliente.c -o cliente -pthread
 gcc empleado.c -o empleado -pthread
 ```
 
-**2. Inicialización del entorno**
+**2. Inicialización del entorno:**
 Antes de arrancar la gasolinera, debes crear la memoria compartida, los semáforos y la cola de mensajes ejecutando el fichero de creación:
 ```bash
 ./crea
 ```
 
-**3. Ejecución del sistema (Cliente y Empleado)**
+**3. Ejecución del sistema (Cliente y Empleado):**
 Al ser un sistema concurrente, necesitarás abrir **dos terminales distintas**:
 *   En la **Terminal 1**, ejecuta el servidor/empleado para que esté a la escucha de peticiones:
     ```bash
@@ -55,7 +55,7 @@ Al ser un sistema concurrente, necesitarás abrir **dos terminales distintas**:
     ./cliente
     ```
 
-**4. Cierre y Limpieza de recursos (Muy importante)**
+**4. Cierre y Limpieza de recursos (Muy importante):**
 Una vez hayas terminado de probar el programa, debes liberar los semáforos y segmentos de memoria compartida que quedaron reservados en el sistema operativo ejecutando el archivo de eliminación:
 ```bash
 ./elimina
